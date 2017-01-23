@@ -22,7 +22,10 @@
       }
       #list {
         position: absolute;
-        top: 100%; left: 0; right: 0;
+        top: 100%;
+        top: calc(100% + .25rem);
+        left: 0; right: 0;
+
         margin: 0;
         padding: 0;
         background: white;
@@ -32,12 +35,20 @@
       #list li {
         list-style-type: none;
       }
-      #list li a {
+      #list li a,
+      #list li button {
         display: block;
         padding: .25rem .5rem;
+        appearance: none;
+        border: 0;
+        font-size: 1em;
+        background: none;
+        width: 100%;
+        text-align: inherit;
+        cursor: pointer;
       }
       #list li:not(:last-child) a {
-        border-top: var(--felds-extended-search-field-borders);
+        border-bottom: var(--felds-extended-search-field-borders);
       }
     </style>
 
@@ -56,7 +67,9 @@
       <li class="suggestion">
         <a href="#">Indústria farmacêutica</a>
       </li>
-      <li>Buscar em todo o conteúdo…</li>
+      <li>
+        <button type="submit">Buscar em todo o conteúdo…</button>
+      </li>
     </ul>
   </template>
 
