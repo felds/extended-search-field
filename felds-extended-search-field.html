@@ -15,6 +15,7 @@
         width: 100%;
         position: relative;
         box-sizing: border-box;
+        --felds-extended-search-field-link-color: deepskyblue;
         --felds-extended-search-field-paddings: .5rem;
         --felds-extended-search-field-background: white;
         --felds-extended-search-field-background-hover: #f5f5f5;
@@ -52,10 +53,17 @@
         width: 100%;
         text-align: inherit;
         cursor: pointer;
+        color: var(--felds-extended-search-field-link-color);
+        text-decoration: none;
       }
       #list li a:hover, #list li a:focus,
       #list li button:hover, #list li button:focus {
         background-color: var(--felds-extended-search-field-background-hover);
+        color: var(--felds-extended-search-field-link-color);
+      }
+      #list li a:active,
+      #list li button:active {
+        color: var(--felds-extended-search-field-link-color);
       }
       #list li:not(:last-child) a {
         border-bottom: var(--felds-extended-search-field-borders);
