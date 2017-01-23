@@ -6,13 +6,17 @@
 
     <title>felds-extended-search-field demo</title>
 
-    <script src="../../webcomponentsjs/webcomponents-lite.js"></script>
+    <script src="../bower_components/webcomponentsjs/webcomponents-lite.js"></script>
 
-    <link rel="import" href="../../iron-demo-helpers/demo-pages-shared-styles.html">
-    <link rel="import" href="../../iron-demo-helpers/demo-snippet.html">
+    <link rel="import" href="../bower_components/iron-demo-helpers/demo-pages-shared-styles.html">
+    <link rel="import" href="../bower_components/iron-demo-helpers/demo-snippet.html">
     <link rel="import" href="../felds-extended-search-field.html">
 
-    <style is="custom-style" include="demo-pages-shared-styles">
+    <style is="custom-style" include="demo-pages-shared-styles"></style>
+    <style media="screen">
+    .vertical-section-container {
+      max-width: 600px !important;
+    }
     </style>
   </head>
   <body>
@@ -20,9 +24,28 @@
       <h3>Basic felds-extended-search-field demo</h3>
       <demo-snippet>
         <template>
-          <felds-extended-search-field></felds-extended-search-field>
+          <felds-extended-search-field name="a"></felds-extended-search-field>
         </template>
       </demo-snippet>
     </div>
+
+    <div class="vertical-section-container centered">
+      <h3>With placeholder</h3>
+      <demo-snippet>
+        <template>
+          <felds-extended-search-field placeholder="Placeholder" name="b"></felds-extended-search-field>
+        </template>
+      </demo-snippet>
+    </div>
+
+    <div class="vertical-section-container centered">
+      <h3>With initial value</h3>
+      <demo-snippet>
+        <template>
+          <felds-extended-search-field value="Initial value" name="c"></felds-extended-search-field>
+        </template>
+      </demo-snippet>
+    </div>
+
   </body>
 </html>
