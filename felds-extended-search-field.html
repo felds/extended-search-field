@@ -14,21 +14,27 @@
         display: inline-block;
         width: 100%;
         position: relative;
+        box-sizing: border-box;
+        --felds-extended-search-field-paddings: .5rem;
+        --felds-extended-search-field-background: white;
+        --felds-extended-search-field-background-hover: #f5f5f5;
         --felds-extended-search-field-borders: 1px solid #f5f5f5;
       }
-      input[type="search"] {
-        font-size: 1rem;
+      :host * {
+        box-sizing: inherit;
+      }
+      input {
+        padding: var(--felds-extended-search-field-paddings);
+        font-size: 1em;
         width: 100%;
       }
       #list {
         position: absolute;
         top: 100%;
-        top: calc(100% + .25rem);
         left: 0; right: 0;
-
         margin: 0;
         padding: 0;
-        background: white;
+        background: var(--felds-extended-search-field-background);
         border: var(--felds-extended-search-field-borders);
         z-index: 1;
       }
@@ -38,7 +44,7 @@
       #list li a,
       #list li button {
         display: block;
-        padding: .25rem .5rem;
+        padding: var(--felds-extended-search-field-paddings);
         appearance: none;
         border: 0;
         font-size: 1em;
@@ -47,19 +53,20 @@
         text-align: inherit;
         cursor: pointer;
       }
+      #list li a:hover, #list li a:focus,
+      #list li button:hover, #list li button:focus {
+        background-color: var(--felds-extended-search-field-background-hover);
+      }
       #list li:not(:last-child) a {
         border-bottom: var(--felds-extended-search-field-borders);
       }
     </style>
 
 
-    <input type="search" name="[[name]]" value="[[value]]" placeholder="[[placeholder]]" id="input" autocomplete="off">
+    <input type="text" name="[[name]]" value="[[value]]" placeholder="[[placeholder]]" id="input" autocomplete="off">
     <ul id="list">
       <li class="suggestion">
         <a href="#">Uma tag qualquer</a>
-      </li>
-      <li class="suggestion">
-        <a href="#">Outra tag</a>
       </li>
       <li class="suggestion">
         <a href="#">Tag</a>
